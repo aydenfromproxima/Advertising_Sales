@@ -26,8 +26,6 @@ In the notebook, I:
 
 Loaded CSV and confirmed dataset shape → 200 × 4 
 
-0c704773-f191-4604-b4c9-cfe2a6c…
-
 Checked missing values → 0 missing values
 
 Checked duplicates → No duplicates
@@ -49,8 +47,6 @@ The project includes several analyses and plots:
 1. Data Distribution
 
 Boxplots revealed wide variance in TV spend and mild outliers in Newspaper (Page 4 image) 
-
-0c704773-f191-4604-b4c9-cfe2a6c…
 
 2. Outlier Detection
 
