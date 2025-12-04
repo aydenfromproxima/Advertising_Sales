@@ -16,7 +16,7 @@ Key Details
 
 No missing values were found in the dataset 
 
-Two outliers were detected in the Newspaper column using the IQR method and removed before modeling (Page 4 boxplot & code) 
+Two outliers were detected in the Newspaper column using the IQR method and removed before modeling 
 
 Final dataset used for modeling: 198 rows × 4 columns.
 
@@ -30,7 +30,7 @@ Checked missing values → 0 missing values
 
 Checked duplicates → No duplicates
 
-Visualized distributions using boxplots (Page 4)
+Visualized distributions using boxplots
 
 Identified and removed outliers using IQR
 
@@ -46,7 +46,7 @@ The project includes several analyses and plots:
 
 1. Data Distribution
 
-Boxplots revealed wide variance in TV spend and mild outliers in Newspaper (Page 4 image) 
+Boxplots revealed wide variance in TV spend and mild outliers in Newspaper 
 
 2. Outlier Detection
 
@@ -61,7 +61,7 @@ Testing samples → 60
 
 4. Feature Scaling
 
-StandardScaler was applied to improve model performance (Page 10 code snippet).
+StandardScaler was applied to improve model performance
 
 **Machine Learning Models**
 
@@ -74,7 +74,6 @@ MAE: 1.18
 RMSE: 1.58
 
 Accuracy: 91.39% (based on 1 - MAPE)
-(Results on Page 15) 
 
 _Decision Tree Regression_
 
@@ -82,8 +81,7 @@ MAE: 1.04
 
 RMSE: 1.53
 
-Accuracy: 91.75%
-(Page 16) 
+Accuracy: 91.75% 
 
 _Random Forest Regression_
 
@@ -92,7 +90,6 @@ MAE: 0.93
 RMSE: 1.15
 
 Accuracy: 93.40%
-(Page 16) 
 
 _XGBoost Regression_
 
@@ -100,8 +97,7 @@ MAE: 0.86
 
 RMSE: 1.17
 
-Accuracy: 93.90%
-(Page 17) 
+Accuracy: 93.90% 
 
 
 Cross Validation
@@ -111,7 +107,6 @@ Decision Tree	0.853
 Random Forest	0.927
 XGBoost	0.934 (best)
 
-(Page 17–18) 
 
 **Final Model**
 
@@ -122,15 +117,14 @@ StandardScaler used for feature normalization
 Exported model as hr.pkl
 
 Exported scaler as schr.pkl
-(Page 18–19) 
 
 **Deployment**
 
 Project includes two interfaces:
 
-Tkinter Desktop App (Page 19 code)
+Tkinter Desktop App
 
-Streamlit Web App (Page 20 code)
+Streamlit Web App
 
 **Key Insights**
 
