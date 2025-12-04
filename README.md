@@ -1,185 +1,175 @@
 # Advertising Data Analytics – Sales Prediction Using Machine Learning
 
-**Dataset Overview**
+A complete machine learning project built to analyze advertising spend across TV, Radio, and Newspaper channels, and predict Sales using multiple regression models.
 
-The dataset contains 200 advertising records with 4 features:
+---
 
-TV
+## Dataset Overview
 
-Radio
+The dataset contains **200 advertising records** with the following features:
 
-Newspaper
+- TV  
+- Radio  
+- Newspaper  
+- Sales (Target)  
 
-Sales (Target)
+### Key Details
 
-Key Details
+- No missing values in the dataset  
+- Two outliers detected in the **Newspaper** column using the IQR method and removed  
+- Final dataset used for modeling: **198 rows × 4 columns**
 
-No missing values were found in the dataset 
+---
 
-Two outliers were detected in the Newspaper column using the IQR method and removed before modeling 
+## Data Preparation
 
-Final dataset used for modeling: 198 rows × 4 columns.
+Steps performed:
 
-**Data Preparation**
+- Loaded CSV and verified shape (**200 × 4**)  
+- Confirmed **0 missing values**  
+- Verified no duplicate entries  
+- Visualized distributions using boxplots  
+- Identified and removed outliers (IQR)  
+- Split dataset into training/testing (**70% / 30%**)  
+- Applied **StandardScaler** for feature normalization  
+- Separated feature variables (TV, Radio, Newspaper) and target (Sales)
 
-In the notebook, I:
+---
 
-Loaded CSV and confirmed dataset shape → 200 × 4 
+## Analysis & Visualizations
 
-Checked missing values → 0 missing values
+### 1. Data Distribution
+- Boxplots showed wide variance in TV spending  
+- Newspaper included mild outliers  
+- TV, Radio, and Sales showed no outliers
 
-Checked duplicates → No duplicates
+### 2. Outlier Detection
+- Only the Newspaper column contained **2 meaningful outliers**
 
-Visualized distributions using boxplots
+### 3. Train–Test Split
+- Training samples: **138**  
+- Testing samples: **60**
 
-Identified and removed outliers using IQR
+### 4. Feature Scaling
+- Standardization significantly improved model stability and accuracy  
 
-Split data into training/testing → 70% / 30%
+---
 
-Normalized features using StandardScaler
+## Machine Learning Models
 
-Prepared features (TV, Radio, Newspaper) and target (Sales)
+Models trained after cleaning, scaling, and splitting:
 
-**Analysis & Visualizations**
+### Linear Regression
+- MAE: 1.18  
+- RMSE: 1.58  
+- Accuracy: **91.39%**
 
-The project includes several analyses and plots:
+### Decision Tree Regression
+- MAE: 1.04  
+- RMSE: 1.53  
+- Accuracy: **91.75%**
 
-1. Data Distribution
+### Random Forest Regression
+- MAE: 0.93  
+- RMSE: 1.15  
+- Accuracy: **93.40%**
 
-Boxplots revealed wide variance in TV spend and mild outliers in Newspaper 
+### XGBoost Regression
+- MAE: 0.86  
+- RMSE: 1.17  
+- Accuracy: **93.90%**
 
-2. Outlier Detection
+### Cross-Validation Scores
 
-Newspaper had 2 outliers
+| Model             | Mean CV Accuracy |
+|------------------|------------------|
+| Linear Regression | 0.897            |
+| Decision Tree     | 0.853            |
+| Random Forest     | 0.927            |
+| XGBoost           | **0.934** (best) |
 
-TV, Radio, Sales had no outliers
+---
 
-3. Train-Test Split
+## Final Model
 
-Training samples → 138
-Testing samples → 60
+- **XGBoost Regressor** selected as final model  
+- StandardScaler used for feature normalization  
+- Model exported as `hr.pkl`  
+- Scaler exported as `schr.pkl`  
 
-4. Feature Scaling
+---
 
-StandardScaler was applied to improve model performance
+## Deployment
 
-**Machine Learning Models**
+The project includes two user interfaces:
 
-The following ML models were trained after cleaning, normalization, and splitting:
+- Tkinter Desktop Application  
+- Streamlit Web Application  
 
-_Linear Regression_
+---
 
-MAE: 1.18
+## Key Insights
 
-RMSE: 1.58
+- TV and Radio advertising have the strongest positive impact on Sales  
+- Newspaper spending provides weak predictive power, especially after outlier removal  
+- Random Forest and XGBoost achieved high accuracy (~94%)  
+- Feature scaling improved model consistency  
+- Higher TV advertising budgets consistently correlate with higher sales  
 
-Accuracy: 91.39% (based on 1 - MAPE)
+---
 
-_Decision Tree Regression_
+## Technologies Used
 
-MAE: 1.04
+- Python  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- XGBoost  
+- Seaborn  
+- Matplotlib  
+- Tkinter  
+- Streamlit  
 
-RMSE: 1.53
+---
 
-Accuracy: 91.75% 
+## How to Run the Project
 
-_Random Forest Regression_
+### 1. Clone the Repository
+` ` `bash git clone https://github.com/yourusername/AdvertisingSalesPrediction.git
 
-MAE: 0.93
+### 2. Install Dependencies
+bash
 
-RMSE: 1.15
+Copy code
 
-Accuracy: 93.40%
-
-_XGBoost Regression_
-
-MAE: 0.86
-
-RMSE: 1.17
-
-Accuracy: 93.90% 
-
-
-Cross Validation
-Model	Mean CV Accuracy
-Linear Regression	0.897
-Decision Tree	0.853
-Random Forest	0.927
-XGBoost	0.934 (best)
-
-
-**Final Model**
-
-XGBoost Regressor selected as final model
-
-StandardScaler used for feature normalization
-
-Exported model as hr.pkl
-
-Exported scaler as schr.pkl
-
-**Deployment**
-
-Project includes two interfaces:
-
-Tkinter Desktop App
-
-Streamlit Web App
-
-**Key Insights**
-
-TV and Radio advertising strongly influence Sales
-
-Newspaper has weak predictive power, especially after outlier removal
-
-XGBoost and Random Forest gave high predictive accuracy (~94%)
-
-Feature scaling significantly improved model stability
-
-Ads with high TV budget consistently generated higher sales
-
-**Languages & Libraries Used**
-
-Python
-Pandas
-NumPy
-Scikit-learn
-XGBoost
-Seaborn
-Matplotlib
-Tkinter
-Streamlit
-
-How to Run the Project
-1. Clone the Repository
-git clone https://github.com/yourusername/AdvertisingSalesPrediction.git
-
-2. Install Dependencies
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost streamlit
+### 3. Run the Notebook
+bash
 
-3. Run the Notebook
+Copy code
+
 jupyter notebook Advertising_Sales_Prediction.ipynb
+### 4. Launch the Streamlit App
+bash
 
-4. Run Streamlit App
+Copy code
+
 streamlit run hrapp.py
+## Future Improvements
+- Add SHAP explainability for model interpretation
 
-Future Improvements
+- Build an interactive dashboard (Streamlit or PowerBI)
 
-Add SHAP explainability for model interpretation
+- Perform hyperparameter tuning for each model
 
-Build an interactive dashboard (Streamlit/PowerBI)
+- Add advanced feature importance visualizations
 
-Add hyperparameter tuning for each model
+- Deploy as a complete web application
 
-Include feature importance visualizations
-
-Deploy as a full web application
-
-Contributing
-
+## Contributing
 Pull requests are welcome.
-You can improve models, add visualizations, or extend deployment.
 
-**If You Found This Useful:**
+You may enhance models, add visualizations, or extend deployment workflows.
 
-Star the repository to support more data analytics projects!
+## Support
+If you found this project useful, consider starring the repository.
