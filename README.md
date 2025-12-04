@@ -155,6 +155,9 @@ bash
 Copy code
 
 streamlit run hrapp.py
+
+---
+
 ## Future Improvements
 - Add SHAP explainability for model interpretation
 
@@ -166,10 +169,14 @@ streamlit run hrapp.py
 
 - Deploy as a complete web application
 
+---
+
 ## Contributing
 Pull requests are welcome.
 
 You may enhance models, add visualizations, or extend deployment workflows.
+
+---
 
 ## Support
 If you found this project useful, consider starring the repository.
